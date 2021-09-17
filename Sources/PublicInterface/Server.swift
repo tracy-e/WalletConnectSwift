@@ -190,8 +190,8 @@ extension Server: UpdateSessionHandlerDelegate {
             do {
                 try disconnect(from: session)
             } catch { // session already disconnected
-                delegate?.server(self, didDisconnect: session)
             }
+            delegate?.server(self, didDisconnect: session)
         } else {
             // we do not add sessions without walletInfo
             let walletInfo = session.walletInfo!
